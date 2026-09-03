@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="TP1-ClasesObjetos/TP1-ClasesObjetos.csproj" />
+  <Project Path="TP2-Encapsulamiento/TP2-Encapsulamiento.csproj" />
+  <Project Path="TP3-HerenciaPolimorfismo/TP3-HerenciaPolimorfismo.csproj" />
+</Solution>
