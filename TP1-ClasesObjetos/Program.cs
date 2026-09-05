@@ -30,7 +30,7 @@ public class Pelicula
     public void CalcularDuracionEnHoras()
     {
         double duracionEnHoras = Duracion / 60.0;
-        duracionEnHoras = Math.Round(duracionEnHoras, 2); // Redondear a 2 decimales
+        duracionEnHoras = Math.Round(duracionEnHoras, 2); // Redondea a 2 decimales
 
         Console.WriteLine($"{duracionEnHoras} hs.");
     }
