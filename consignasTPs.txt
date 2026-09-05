@@ -1,0 +1,151 @@
+Trabajo Práctico N° 1 — Clases y objetos
+Propósito
+Este primer TP es el punto de partida de la progresión: instala el hábito de pensar el dominio en
+términos de clases y objetos antes de escribir cualquier línea de código, base sobre la que se apoyarán
+los cinco TP restantes.
+Objetivo y contenidos que integra
+Se espera que el estudiante diseñe una clase simple y la instancie correctamente, aplicando los
+contenidos de la Unidad 1:
+• Definición de clases con atributos y métodos.
+• Creación de objetos mediante new.
+• Distinción entre estado y comportamiento.
+Conocimientos necesarios
+Los contenidos de la Unidad 1 (clases, objetos, atributos, métodos) y el manejo básico de tipos de datos
+y estructuras de control de Programación I.
+Situación
+Empezás a colaborar con un pequeño emprendimiento que hasta ahora llevaba su información en
+planillas de cálculo y quiere dar el primer paso hacia un sistema propio. Todavía no hay pantallas ni
+base de datos: el pedido es simplemente poder representar en código, de forma ordenada, la
+información con la que trabajan todos los días.
+Consignas
+1. Elegí un dominio simple (por ejemplo: Libro, Vehiculo, Alumno o Pelicula) que vas a
+mantener a lo largo de los seis TP.
+2. Diseñá una clase que lo represente, con al menos cuatro atributos y dos métodos que realicen
+algún cálculo o transformación sobre esos atributos.
+3. Escribí un programa de consola que instancie al menos tres objetos con valores distintos, invoque
+sus métodos y muestre los resultados de forma clara.
+✏️ Actividad — producto esperado
+Código fuente de la clase y del programa de consola.
+• Criterios de calidad: atributos y métodos con nombres claros y coherentes con el dominio
+elegido; métodos que efectivamente calculen o transformen algo (no solo getters); código de
+consola legible, sin repetición innecesaria.
+Qué debe validar el estudiante
+• ¿Cada atributo de la clase corresponde realmente a una característica del objeto, y no a un dato
+calculable a partir de otros?
+• ¿Los métodos hacen algo más que devolver un valor (calculan, transforman o combinan datos)?
+• ¿Podés explicar, sin mirar el código, la diferencia entre la clase y cada uno de los tres objetos
+instanciados?
+UTN FRT · Programación II · Dossier de Cátedra 2026 · Página 106PROGRAMACIÓN II
+Dossier de Cátedra 2026
+Conexión con el siguiente TP
+La clase diseñada acá se retoma en el TP N° 2 para encapsularla, agregarle una relación con otra clase y
+almacenar varios objetos en una colección — conviene entonces evitar decisiones de diseño
+demasiado particulares que compliquen esa ampliación.
+UTN FRT · Programación II · Dossier de Cátedra 2026 · Página 107PROGRAMACIÓN II
+Dossier de Cátedra 2026
+Trabajo Práctico N° 2 — Encapsulamiento, relaciones y
+colecciones
+Propósito
+Este TP transforma el modelo suelto del TP N° 1 en un diseño protegido y conectado, incorporando dos
+ideas que van a atravesar todo el resto de la materia: que un objeto puede impedir sus propios estados
+inválidos, y que los objetos rara vez existen aislados.
+Objetivo y contenidos que integra
+Se espera que el estudiante encapsule correctamente una clase, la relacione con otra y trabaje con una
+colección de objetos, aplicando los contenidos de las Unidades 2 y 3:
+• Encapsulamiento: atributos private, propiedades con validación, constructores.
+• Al menos una enumeración (enum) para un atributo de valores cerrados.
+• Una colección (List<T> o Dictionary<TKey, TValue>) de objetos.
+• Una relación entre dos clases (asociación, agregación o composición), justificada.
+Conocimientos necesarios
+El diseño de clases del TP N° 1 y los contenidos de las Unidades 2 y 3 (encapsulamiento, propiedades,
+enum, colecciones genéricas y relaciones entre clases).
+Situación
+El emprendimiento del TP anterior creció: ahora necesita que el sistema impida cargar datos absurdos
+(precios negativos, categorías inventadas) y que pueda recordar varios registros a la vez, no solo uno de
+prueba. Además, alguien del equipo señala que dos de los conceptos que venían manejando por
+separado en realidad están relacionados entre sí.
+Consignas
+1. Retomá la clase del TP N° 1 y encapsulala completamente (atributos private, propiedades con
+validación, constructores que garanticen un estado inicial válido).
+2. Agregá una segunda clase relacionada con la primera. Elegí y justificá si la relación es de
+asociación, agregación o composición.
+3. Incorporá una enum para algún atributo de valores acotados.
+4. Almacená varios objetos en una colección (List<T> o Dictionary<TKey, TValue>) y
+escribí un programa de consola que los cargue, los recorra y muestre un resumen.
+✏️ Actividad — producto esperado
+Código fuente actualizado, con un breve texto (puede ser un comentario extenso al inicio del archivo)
+que justifique la relación elegida entre las dos clases.
+• Criterios de calidad: las validaciones de las propiedades impiden efectivamente estados
+inválidos (no son solo cosméticas); la relación entre clases es coherente con lo trabajado en la
+Unidad 3 y está justificada, no elegida al azar; la colección se recorre sin acceder a campos
+internos de los objetos que contiene.
+UTN FRT · Programación II · Dossier de Cátedra 2026 · Página 108PROGRAMACIÓN II
+Dossier de Cátedra 2026
+Qué debe validar el estudiante
+• ¿Probaste crear un objeto con datos inválidos (por ejemplo, un precio negativo) y verificaste que la
+propiedad lo rechace en lugar de aceptarlo silenciosamente?
+• ¿La relación que elegiste entre las dos clases realmente representa «tiene un» y no «es un» (eso se
+trabaja recién en el TP N° 3)?
+• ¿Es posible, desde fuera de la clase, modificar un atributo sin pasar por una propiedad o un
+método?
+Conexión con el siguiente TP
+Una de las clases de este sistema —la que represente un concepto con variantes naturales dentro del
+dominio— se va a convertir en el TP N° 3 en el punto de partida de una jerarquía de herencia.
+UTN FRT · Programación II · Dossier de Cátedra 2026 · Página 109PROGRAMACIÓN II
+Dossier de Cátedra 2026
+Trabajo Práctico N° 3 — Herencia, abstracción y
+polimorfismo
+Propósito
+Este TP introduce la decisión de diseño más delicada de la primera mitad de la materia: reconocer
+cuándo un conjunto de clases comparte una verdadera relación «es un» y modelarla de forma que el
+resto del sistema pueda tratarlas de manera uniforme.
+Objetivo y contenidos que integra
+Se espera que el estudiante modele una jerarquía de herencia genuina y demuestre polimorfismo,
+aplicando los contenidos de las Unidades 4 y 5:
+• Una jerarquía de clases con una verdadera relación «es un» entre al menos tres clases.
+• Una clase base abstracta con al menos un método abstracto.
+• Polimorfismo: tratamiento uniforme de las clases derivadas mediante una colección de la clase
+base.
+• Al menos una excepción (personalizada o de .NET) protegiendo una regla de negocio del dominio.
+Conocimientos necesarios
+El sistema encapsulado y relacionado del TP N° 2, y los contenidos de las Unidades 4 y 5 (herencia,
+clases abstractas, polimorfismo y manejo de excepciones).
+Situación
+Al revisar el sistema con más detalle, el equipo nota que uno de los conceptos del dominio en realidad
+agrupa varias variantes que comparten comportamiento pero también tienen diferencias importantes
+(por ejemplo, distintos tipos de cliente, de vehículo o de producto). Además, apareció un caso real
+donde se intentó registrar una operación que viola una regla básica del negocio, y el sistema debería
+haberlo impedido en lugar de romperse.
+Consignas
+1. Dentro de tu dominio, identificá un concepto que se especialice en variantes (por ejemplo,
+distintos tipos de Socio, de Vehiculo o de Empleado).
+2. Modelalo con una clase base abstracta y al menos dos clases derivadas, con al menos un método
+abstracto que cada derivada implemente de forma distinta.
+3. Agregá una colección de la clase base que permita recorrer todas las variantes de forma uniforme,
+sin condicionales de tipo.
+4. Incorporá manejo de excepciones para al menos una regla de negocio que no deba violarse.
+⚠️ Error frecuente
+No fuerces una jerarquía de herencia dentro de tu ABMC principal si el dominio no tiene una relación
+«es un» genuina. Si no la encontrás, elegí un aspecto complementario del dominio o un pequeño
+subdominio adecuado para demostrar herencia y polimorfismo, y justificá por qué no forzaste esa
+jerarquía dentro del ABMC principal — es preferible una jerarquía pequeña y bien justificada que una
+forzada.
+UTN FRT · Programación II · Dossier de Cátedra 2026 · Página 110PROGRAMACIÓN II
+Dossier de Cátedra 2026
+✏️ Actividad — producto esperado
+Código fuente actualizado, incluyendo la jerarquía de clases y el manejo de excepciones.
+• Criterios de calidad: la jerarquía elegida responde a una relación «es un» real y está justificada
+(¿por qué no es «tiene un»?); el polimorfismo se demuestra recorriendo la colección de la clase
+base sin if/switch sobre el tipo concreto; la excepción protege una regla de negocio real del
+dominio, no un caso trivial.
+Qué debe validar el estudiante
+• ¿Cada clase derivada agrega o modifica comportamiento respecto de la base, y no se limita a
+repetir sus mismos atributos?
+• ¿El recorrido de la colección polimórfica funciona sin preguntar de qué tipo concreto es cada
+elemento?
+• ¿Probaste forzar la violación de la regla de negocio protegida y verificaste que la excepción se
+dispare en lugar de que el programa falle de otra forma?
+Conexión con el siguiente TP
+La clase (o alguna de las clases derivadas) de este sistema es la que se va a exponer en el TP N° 4 a través
+de un formulario de Windows Forms, así que conviene que sus reglas de validación queden bien
+encapsuladas y no dependan de la consola.
